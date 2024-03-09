@@ -1,18 +1,4 @@
-:root {
-  --primary-color: #302AE6;
-  --secondary-color: #536390;
-  --font-color: #424242;
-  --bg-color: #fff;
-  --heading-color: #292922;
-}
 
-[data-theme="dark"] {
-  --primary-color: #9A97F3;
-  --secondary-color: #818cab;
-  --font-color: #e1e1ff;
-  --bg-color: #161625;
-  --heading-color: #818cab;
-}
 
 
 /*
@@ -63,13 +49,29 @@
   }
 
     * {
-      color:var(--font-color);
       font-family: Helvetica, Arial, sans-serif;
       border: dashed 1px red;
     }
 
-    body {
+    .light {
+      --primary-color: #302AE6;
+      --secondary-color: #536390;
+      --font-color: #424242;
+      --bg-color: #fff;
+      --heading-color: #292922;
+    }
+    
+    .dark {
+      --primary-color: #9A97F3;
+      --secondary-color: #818cab;
+      --font-color: #e1e1ff;
+      --bg-color: #161625;
+      --heading-color: #818cab;
+    }
+
+    * {
       background-color: var(--bg-color);
+      color: var(--font-color);
     }
 
     header {
@@ -77,6 +79,9 @@
       justify-content:space-between;
       align-items: center;
       padding:2%;
+    }
+    header section #theme-toggle {
+      font-size: 1.5rem;
     }
 
   header h1 {
@@ -90,13 +95,35 @@
 
   main section {
     padding: 2%;
-    width: 100%;
+    width: 98%;
   }
 
   main section img {
     
   }
 
+  main form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main form section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  main section form label{
+    display:block;
+    flex-basis:30%;
+    padding:3%;
+    font-weight: bold;
+
+  }
+
+  main section form input{
+    display:block;
+    padding:3%;
+  }
 
   
 
@@ -106,30 +133,30 @@
 
   }
 
-  #light-dark {
+  #theme-toggle {
     font-size: 3rem;
     cursor: pointer;
   }
 
-  @media all and (min-width: 1024px) and (max-width: 1280px) { 
+  @media all and (min-width: 1024px) and (max-width: 2280px) { 
     main {
-      flex-direction: column;
+      flex-direction: row;
     }
     main section {
-      width:50%;
+      width:49%;
     }
   }
 
-@media all and (min-width: 575px) and (max-width: 1024px) { 
+@media all and (min-width: 640px) and (max-width: 1024px) { 
   main {
     flex-direction: column;
   }
   main section {
-    width:50%;
+    width:49%;
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 575px) { 
+@media all and (min-width: 480px) and (max-width: 640px) { 
     
     
 }
