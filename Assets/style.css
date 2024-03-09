@@ -59,6 +59,8 @@
       --font-color: #424242;
       --bg-color: #fff;
       --heading-color: #292922;
+      --btn-background-color: #6864e2;
+      --btn-color: #e3e3e9;
     }
     
     .dark {
@@ -67,6 +69,8 @@
       --font-color: #e1e1ff;
       --bg-color: #161625;
       --heading-color: #818cab;
+      --btn-background-color: #c2c1de;
+      --btn-color: #3f3fdd;
     }
 
     * {
@@ -94,37 +98,63 @@
   }
 
   main section {
-    padding: 2%;
-    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
   }
 
   main section img {
-    
+    width:80%;
   }
 
   main form {
     display: flex;
     flex-direction: column;
+    flex-basis:80%;
   }
 
-  main form section {
+  form section {
+    align-items: center;
+    
+  }
+
+  form label{
     display: flex;
-    flex-direction: row;
-  }
-
-  main section form label{
-    display:block;
-    flex-basis:30%;
-    padding:3%;
+    align-items: baseline;
+    flex-direction: column;
+    justify-content:space-around;
+    padding: 5% 2% 1%;
     font-weight: bold;
-
   }
 
-  main section form input{
-    display:block;
+  input {
+    flex-basis: 20%;
+  }
+
+  input, textarea {
     padding:3%;
+    border-radius: 10px;
+    border: solid var(--secondary-color) 0.5px;
+    box-shadow: none;
+    color: var(--font-color);
+    background-color: var(--bg-color);
   }
 
+  input[type=submit] {
+    font-weight: bold;
+    margin: 10% 3%;
+    padding: 4% 20%;
+    color: var(--btn-color);
+    background-color: var(--btn-background-color);
+  }
+
+  textarea {
+    width:100%;
+    
+  }
+ 
   
 
   
@@ -149,10 +179,10 @@
 
 @media all and (min-width: 640px) and (max-width: 1024px) { 
   main {
-    flex-direction: column;
+    flex-direction: row;
   }
   main section {
-    width:49%;
+    width:90%;
   }
 }
 
