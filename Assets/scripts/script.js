@@ -104,6 +104,7 @@ function switchTheme() {
 //Event Handlers
 function submitBlogPostHandler(event) {
     event.preventDefault();
+
     const userNameInput = document.getElementById('username');
     const blogTitleInput = document.getElementById('blog-title');
     const blogContentInput = document.getElementById('blog-content');
@@ -112,10 +113,20 @@ function submitBlogPostHandler(event) {
     console.log(blogList);
     
     let blogPost = {}; 
-        blogPost.userName = userNameInput.value;
+        if (!(blogPost.userName = userNameInput.value)) {
+            alert("Please enter a username")
+            return;
+        };
         blogPost.date = Date.now();
-        blogPost.title = blogTitleInput.value;
-        blogPost.content = blogContentInput.value;
+        
+        if (!(blogPost.title = blogTitleInput.value)){
+        alert("Please enter a title for your post")
+        return;
+    };
+        if (!(blogPost.content = blogContentInput.value)) {
+        alert("Please enter some content for your blog")
+        return;
+    };
     
 
         blogList.push(blogPost);
